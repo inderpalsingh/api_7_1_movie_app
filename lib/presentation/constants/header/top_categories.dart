@@ -10,23 +10,26 @@ class TopCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: categoriesList.length,
-      itemBuilder: (_, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
-          child: Container(
-            width: 100,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-              color: Colors.amber,
+    return Padding(
+      padding: const EdgeInsets.only(left: 10.0),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: categoriesList.length,
+        itemBuilder: (_, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Container(
+              width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Colors.amber,
+              ),
+              child: Center(child: Text(categoriesList[index], style: const TextStyle(fontWeight: FontWeight.bold))),
             ),
-            child: Center(child: Text(categoriesList[index])),
-          ),
-        );
-      },
+          );
+        },
 
+      ),
     );
   }
 }

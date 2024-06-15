@@ -1,6 +1,7 @@
 import 'package:api_7_1_movie_app/presentation/constants/header/top_user_profile.dart';
 import 'package:flutter/material.dart';
 
+import '../constants/category_images/category_image.dart';
 import '../constants/header/top_categories.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,18 +21,33 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               color: const Color(0xff0f0f0f0),
               height: mediaQuery!.size.height * 0.12,
-               child: topProfile(),
+              child: topProfile(),
             ),
             const SizedBox(height: 20),
+
             /// categories
             SizedBox(
-              height: 50,
+              height: 40,
               child: TopCategories(categoriesList: categories),
-            )
+            ),
+            const SizedBox(height: 15),
+            SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return const CategoryImage();
+                  },
+                ),
+            ),
+            const SizedBox(height: 10),
+
           ],
         ),
       ),
