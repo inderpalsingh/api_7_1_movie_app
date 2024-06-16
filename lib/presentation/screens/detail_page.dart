@@ -18,9 +18,13 @@ class DetailPage extends StatelessWidget {
                 width: double.infinity,
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(51),
-                    child: Image.network(
-                      'https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg',
-                      fit: BoxFit.cover,
+                    child: Opacity(
+                      opacity: 0.9,
+                      child: Image.network(
+                        'https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg',
+                        fit: BoxFit.cover,
+
+                      ),
                     )),
               ),
               const SizedBox(height: 50),
