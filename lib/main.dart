@@ -1,3 +1,4 @@
+import 'package:api_7_1_movie_app/presentation/screens/detail_page.dart';
 import 'package:api_7_1_movie_app/presentation/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: DetailPage(),
     );
   }
 }

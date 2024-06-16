@@ -37,16 +37,70 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             SizedBox(
-                height: 200,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return const CategoryImage();
-                  },
-                ),
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (_, index) {
+                  return const CategoryImage();
+                },
+              ),
             ),
-            const SizedBox(height: 10),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [Text('Text 1'), Text('Text 2')],
+                  ),
+                ),
+                Column(
+                  children: [Text('Text 1'), Text('Text 2')],
+                ),
+                Column(
+                  children: [Text('Text 1'), Text('Text 2')],
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            const Text('Selections', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            const SizedBox(height: 20),
+            Container(
+              height: 200,
+              width: 300,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(21), color: Colors.grey.shade200),
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 10,
+                    top: 15,
+                    child: Container(
+                      height: 170,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(51),
+                        color: const Color(0xff0ffb906),
+                      ),
+                    ),
+                  ),
+                  const Positioned(
+                    right: 50,
+                    top: 40,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Best Movies',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                        Text('2022',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                        Text('50 Movies',style: TextStyle(fontSize: 15)),
+                      ],
+                    ),
+                  )
+                ],
+              )
+            )
+
 
           ],
         ),
