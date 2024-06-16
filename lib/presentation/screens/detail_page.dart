@@ -13,7 +13,7 @@ class DetailPage extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Container(
+              SizedBox(
                 height: mediaQueryData!.size.height * .6,
                 width: double.infinity,
                 child: ClipRRect(
@@ -22,6 +22,59 @@ class DetailPage extends StatelessWidget {
                       'https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg',
                       fit: BoxFit.cover,
                     )),
+              ),
+              const SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(top: 450,left: 20),
+                    height: 70,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: const Color(0xff06a766d)
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xff0ffb906),
+                            child: Text('8.1',),
+                          ),
+                          Icon(Icons.star_border_outlined,color: Colors.white,size: 40),
+
+                        ],
+                      ),
+                    ),
+                  ),
+
+                    Container(
+                    margin: const EdgeInsets.only(top: 450,left: 20),
+                    height: 70,
+                    width: 70,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: const Color(0xff06a766d)
+                    ),
+                    child: Icon(Icons.bookmark_outline_outlined, size: 35,color: Colors.white,)
+                  ),
+
+                  Container(
+                    margin: const EdgeInsets.only(top: 450,left: 20),
+                    height: 70,
+                    width: 70,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Colors.white
+                    ),
+                    child: Icon(Icons.play_arrow_outlined, size: 40,)
+                  ),
+
+
+                ],
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 20.0, top: 50, right: 20),
@@ -40,41 +93,27 @@ class DetailPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Positioned(
-                bottom: 200,
-                left: 20,
+              const Positioned(
+                bottom: 170,
+                left: 30,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Avtar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30.0)),
-                    const SizedBox(height: 15),
+                    Text('Avtar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 40.0)),
+
                     SizedBox(
                       child: Row(
                         children: [
-                          const Text('2016', style: TextStyle(color: Colors.white)),
-                          const SizedBox(width: 15),
-                          const Text('2h 15min', style: TextStyle(color: Colors.white)),
-                          const SizedBox(width: 15),
-                          const Text('18+', style: TextStyle(color: Colors.white)),
-                          const SizedBox(width: 15),
+                          Text('2016', style: TextStyle(color: Colors.white,fontSize: 15)),
+                          SizedBox(width: 15),
+                          Text('2h 15min', style: TextStyle(color: Colors.white,fontSize: 15)),
+                          SizedBox(width: 15),
+                          Text('18+', style: TextStyle(color: Colors.white,fontSize: 15)),
+                          SizedBox(width: 15),
                         ],
                       ),
                     ),
-                    SizedBox(
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            color: Colors.amber,
-                          )
-,                          const SizedBox(width: 15),
-                          const Text('2h 15min', style: TextStyle(color: Colors.white)),
-                          const SizedBox(width: 15),
-                          const Text('18+', style: TextStyle(color: Colors.white)),
-                          const SizedBox(width: 15),
-                        ],
-                      ),
-                    )
+
                   ],
                 ),
               )
